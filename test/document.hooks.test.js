@@ -10,11 +10,14 @@ var start = require('./common'),
     Document = require('../lib/document'),
     EmbeddedDocument = require('../lib/types/embedded');
 
+var EventEmitter = require('events').EventEmitter;
+
 /**
  * Test Document constructor.
  */
 
 function TestDocument() {
+  this.$emitter = new EventEmitter();
   Document.apply(this, arguments);
 }
 
